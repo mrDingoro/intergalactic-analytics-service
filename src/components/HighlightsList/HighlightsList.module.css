@@ -1,0 +1,8 @@
+.info {
+    font-size: var(--text-lg);
+    color: var(--color-secondary);
+}
+
+.container {
+    text-align: center;
+}

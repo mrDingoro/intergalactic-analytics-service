@@ -1,0 +1,58 @@
+:root {
+    /* Цвета текста */
+    --color-dark: #201b10;
+    --color-error: #ff5f00;
+    --color-secondary: #cb81ff;
+
+    /* Фоновые цвета */
+    --bg-primary: #fce2ff;
+    --bg-error: #ff5f00;
+    --bg-success: #d4fae6;
+    --bg-uplodaer: #eacdff;
+    --bg-secondary: #cb81ff;
+
+    /* Кнопки */
+    --btn-bg-active: #2ae881;
+    --btn-bg-inactive: #c0c0c0;
+    --btn-color-inactive: #787878;
+    --btn-bg-download: #fce300;
+    --btn-bg-clear: #201b10;
+    --btn-color-clear: #ffffff;
+    --btn-color-upload: #ffffff;
+
+    /* Типографика */
+    --font-main: "Roboto", sans-serif;
+    --text-lg: 40px;
+    --text-md: 30px;
+    --text-sm: 20px;
+
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+    --line-height-small: 90%;
+    --line-height-normal: 110%;
+    --letter-spacing-normal: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    font-size: var(--text-md);
+    line-height: var(--line-height-normal);
+    letter-spacing: var(--letter-spacing-normal);
+    color: var(--color-dark);
+    background-color: var(--bg-primary);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+}
