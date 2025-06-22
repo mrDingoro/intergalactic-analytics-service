@@ -1,1 +1,1 @@
-# React + TypeScript + Vite
+# ШРИ - Mежгалактическая аналитика (React + TypeScript + Vite)
