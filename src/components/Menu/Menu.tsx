@@ -2,7 +2,7 @@ import styles from './Menu.module.css';
 import uploader from '/uploader.svg';
 import generator from '/generator.svg';
 import history from '/history.svg';
-import { MenuItem } from '../MenuItem/MenuItem';
+import { MenuItem } from '../MenuItem';
 
 export const Menu: React.FC = function Menu() {
   return (

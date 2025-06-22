@@ -1,0 +1,157 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: modalAppear 0.3s ease-out;
+  position: relative;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Modal sizes */
+.small {
+  width: 100%;
+  max-width: 400px;
+}
+
+.medium {
+  width: 100%;
+  max-width: 600px;
+}
+
+.large {
+  width: 100%;
+  max-width: 800px;
+}
+
+.fullscreen {
+  width: 95vw;
+  height: 95vh;
+  max-width: none;
+  max-height: none;
+}
+
+/* Header */
+.header {
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Close buttons */
+.closeButton,
+.closeButtonTopRight {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  min-height: 2rem;
+}
+
+.closeButtonTopRight {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+}
+
+.closeButton:hover,
+.closeButtonTopRight:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.closeButton:focus,
+.closeButtonTopRight:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Content */
+.content {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* When there's no header, add top padding to content */
+.modal:not(:has(.header)) .content {
+  padding-top: 3rem;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .backdrop {
+    padding: 0.5rem;
+  }
+
+  .modal {
+    width: 100%;
+    max-width: none;
+    border-radius: 8px;
+  }
+
+  .fullscreen {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .header {
+    padding: 1rem;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .modal:not(:has(.header)) .content {
+    padding-top: 2.5rem;
+  }
+}

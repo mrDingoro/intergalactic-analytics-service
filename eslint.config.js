@@ -3,13 +3,11 @@ import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
-import stylistic from '@stylistic/eslint-plugin' // Добавляем плагин
+import stylistic from '@stylistic/eslint-plugin'
 import prettierConfig from 'eslint-config-prettier'
 import pluginPrettier from 'eslint-plugin-prettier'
 
-// Правила форматирования из первого конфига
 const formattingRules = {
-  // Общие правила
   curly: 'error',
   '@stylistic/array-bracket-spacing': ['error', 'never'],
   '@stylistic/lines-between-class-members': ['error', 'always'],
@@ -54,8 +52,6 @@ const formattingRules = {
     { blankLine: 'always', prev: 'while', next: '*' },
     { blankLine: 'always', prev: '*', next: 'return' }
   ],
-
-  // Правило для Prettier
   'prettier/prettier': ['error', { endOfLine: 'auto' }],
 };
 
@@ -65,7 +61,7 @@ export default tseslint.config(
     extends: [
       js.configs.recommended,
       ...tseslint.configs.recommended,
-      prettierConfig // Отключает конфликтующие правила
+      prettierConfig
     ],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
@@ -75,8 +71,8 @@ export default tseslint.config(
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
-      '@stylistic': stylistic, // Регистрируем плагин
-      prettier: pluginPrettier // Интеграция Prettier
+      '@stylistic': stylistic,
+      prettier: pluginPrettier
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -84,7 +80,7 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
-      ...formattingRules // Добавляем правила форматирования
+      ...formattingRules
     },
   }
 );

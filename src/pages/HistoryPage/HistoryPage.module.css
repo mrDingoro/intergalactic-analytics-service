@@ -1,0 +1,93 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.history {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.rowOutline {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.row {
+    width: 100%;
+    font-size: 30px;
+    background-color: #cb81ff;
+    border-radius: 40px;
+    padding: 16px 20px;
+    cursor: pointer;
+
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    text-wrap: nowrap;
+}
+
+.nameColumn {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.rowDisabled {
+    cursor: not-allowed;
+}
+
+.name {
+    max-width: 300px;
+    overflow: auto;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.name::-webkit-scrollbar {
+    display: none;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.faint {
+    opacity: 0.3;
+}
+
+.trashWrapper {
+    background-color: white;
+    padding: 16px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+}
+
+.trashWrapper:hover {
+    background-color: rgba(255, 255, 255, 0.762);
+}
+
+.trashWrapper:active {
+    background-color: white;
+}
+
+.empty {
+    color: #cb81ff;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
